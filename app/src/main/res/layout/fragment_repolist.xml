@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/background"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/textView_titleRepo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginHorizontal="@dimen/margin_15_dp"
+        android:layout_marginVertical="@dimen/margin_10_dp"
+        android:text="@string/reposit_rios_github"
+        android:fontFamily="@font/roboto_bold"
+        android:textSize="@dimen/title_size_26sp"
+        android:textColor="@color/primary_text"
+        />
+
+    <TextView
+        android:id="@+id/textView_subtitleFounds"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/textView_titleRepo"
+        app:layout_constraintEnd_toEndOf="@id/textView_titleRepo"
+        app:layout_constraintTop_toBottomOf="@id/textView_titleRepo"
+        android:layout_marginTop="@dimen/margin_5_dp"
+        android:fontFamily="@font/roboto_regular"
+        android:textSize="@dimen/subtitle_size_18sp"
+        android:textColor="@color/secondary_text"
+        tools:text="@string/total_encontrados"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView_subtitleFounds"
+        android:layout_marginTop="@dimen/margin_15_dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

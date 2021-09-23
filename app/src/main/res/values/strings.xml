@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">GithubRepos</string>
+    <string name="reposit_rios_github">Repositórios Github</string>
+    <string name="total_encontrados">Total encontrados: %s</string>
 </resources>

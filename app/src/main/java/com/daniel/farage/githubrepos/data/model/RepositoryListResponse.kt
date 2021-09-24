@@ -1,6 +1,5 @@
 package com.daniel.farage.githubrepos.data.model
 
-import com.daniel.farage.githubrepos.domain.model.Repository
 import com.daniel.farage.githubrepos.domain.model.RepositoryData
 import com.google.gson.annotations.SerializedName
 

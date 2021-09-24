@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.25729166666666664" />
+        <entry key="app/src/main/res/layout/fragment_error_screen.xml" value="0.25729166666666664" />
         <entry key="app/src/main/res/layout/fragment_repolist.xml" value="0.17852339271064666" />
       </map>
     </option>

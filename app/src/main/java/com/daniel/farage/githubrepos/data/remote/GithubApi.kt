@@ -7,14 +7,22 @@ import retrofit2.http.Query
 
 interface GithubApi {
 
-    @GET("/repositories")
+    @GET("repositories")
     suspend fun getRepositories(
         @Query(Constants.Params.QUERY_LANGUAGE)
         language: String = Constants.Params.QUERY_LANGUAGE_VALUE,
         @Query(Constants.Params.QUERY_SORT)
         sort: String = Constants.Params.QUERY_SORT_VALUE,
+        @Query(Constants.Params.QUERY_PERPAGE)
+        perPage: Int = Constants.Params.QUERY_PERPAGE_VALUE,
         @Query(Constants.Params.QUERY_PAGE)
         page: Int = 1
+    ): RepositoryListResponse
+
+    @GET("repositories")
+    suspend fun getTotalRepositories(
+        @Query(Constants.Params.QUERY_LANGUAGE)
+        language: String = Constants.Params.QUERY_LANGUAGE_VALUE,
     ): RepositoryListResponse
 
 }

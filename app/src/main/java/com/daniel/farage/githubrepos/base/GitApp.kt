@@ -8,7 +8,7 @@ import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
 
-class GitApp: Application() {
+class GitApp : Application() {
     override fun onCreate() {
         super.onCreate()
         startKoin {

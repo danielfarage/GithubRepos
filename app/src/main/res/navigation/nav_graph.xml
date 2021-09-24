@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/nav_graph">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/repoListFragment">
+
+    <fragment
+        android:id="@+id/repoListFragment"
+        tools:layout="@layout/fragment_repolist"
+        android:name="com.daniel.farage.githubrepos.features.repolist.RepoListFragment"
+        android:label="RepoListFragment" >
+        <action
+            android:id="@+id/action_repoListFragment_to_errorScreenFragment"
+            app:destination="@id/errorScreenFragment" />
+    </fragment>
+    <fragment
+        tools:layout="@layout/fragment_error_screen"
+        android:id="@+id/errorScreenFragment"
+        android:name="com.daniel.farage.githubrepos.features.errorscreen.ErrorScreenFragment"
+        android:label="ErrorScreenFragment" />
+
 
 </navigation>

@@ -21,12 +21,12 @@ data class OwnerRepositoryResponse(
     val authorName: String?
 )
 
-fun RepositoryResponse.mapToRepository() : Repository {
+fun RepositoryResponse.mapToRepository(): Repository {
     return Repository(
         this.nameRepo ?: "",
         this.stars ?: 0,
         this.forkCount ?: 0,
-        this.ownerRepository?.authorPic  ?: "",
-        this.ownerRepository?.authorName  ?: ""
+        this.ownerRepository?.authorPic ?: "",
+        this.ownerRepository?.authorName ?: ""
     )
 }

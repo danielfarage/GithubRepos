@@ -1,13 +1,13 @@
 package com.daniel.farage.githubrepos.features.repolist
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.lifecycleScope
-import androidx.navigation.NavDestination
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.daniel.farage.githubrepos.R
@@ -53,7 +53,7 @@ class RepoListFragment : Fragment() {
 
     private fun collectViewState() = lifecycleScope.launchWhenStarted {
         viewModel.viewState.collect { state ->
-            when(state) {
+            when (state) {
                 is ViewState.Error -> {
                     viewModel.navigateTo(R.id.action_repoListFragment_to_errorScreenFragment)
                 }
@@ -61,14 +61,24 @@ class RepoListFragment : Fragment() {
                     binding.progressBarLoad.isVisible(state.isLoading)
                 }
                 is ViewState.Navigate -> {
-                    findNavController().navigate(state.toDestination)
+                    try {
+                        findNavController().navigate(state.toDestination)
+                    } catch (exception: Exception) {
+                        exception.message?.let {
+                            Log.d(
+                                this@RepoListFragment.javaClass.simpleName,
+                                it
+                            )
+                        }
+                    }
                 }
             }
         }
     }
 
     private fun observeTotalRepositories() = Observer<Int> { total ->
-        binding.textViewSubtitleFounds.text = getString(R.string.total_encontrados, total.toString())
+        binding.textViewSubtitleFounds.text =
+            getString(R.string.total_encontrados, total.toString())
     }
 
     private fun fetchTotalRepositories() {

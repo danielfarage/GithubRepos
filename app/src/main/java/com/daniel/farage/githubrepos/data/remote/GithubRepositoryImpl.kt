@@ -17,7 +17,7 @@ class GithubRepositoryImpl(
 
     override suspend fun getRepository(): Flow<PagingData<Repository>> {
         return Pager(
-            PagingConfig(pageSize = 10, enablePlaceholders = false)
+            PagingConfig(pageSize = 10, enablePlaceholders = true)
         ) {
             pageSource
         }.flow
@@ -27,13 +27,6 @@ class GithubRepositoryImpl(
         val response = api.getTotalRepositories().mapToRepositoryData()
         Resource.Success(response)
     } catch (exception: java.lang.Exception) {
-        Resource.Failure(exception)
-    }
-
-    suspend fun retrieveRepositories(page: Int): Resource<RepositoryData> = try {
-        val response = api.getRepositories(page = page)
-        Resource.Success(response.mapToRepositoryData())
-    } catch (exception: Exception) {
         Resource.Failure(exception)
     }
 }

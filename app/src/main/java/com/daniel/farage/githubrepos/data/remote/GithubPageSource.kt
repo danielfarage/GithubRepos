@@ -5,7 +5,7 @@ import androidx.paging.PagingState
 import com.daniel.farage.githubrepos.data.model.mapToRepositoryData
 import com.daniel.farage.githubrepos.domain.model.Repository
 
-class GithubPageSource(val githubApi: GithubApi) :
+class GithubPageSource(private val githubApi: GithubApi) :
     PagingSource<Int, Repository>() {
     override fun getRefreshKey(state: PagingState<Int, Repository>): Int? {
         return state.anchorPosition

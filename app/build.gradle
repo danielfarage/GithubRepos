@@ -13,7 +13,7 @@ android {
         versionCode 1
         versionName "1.0"
 
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "com.daniel.farage.githubrepos.GithubTestRunner"
     }
 
     buildTypes {
@@ -80,13 +80,17 @@ dependencies {
     // Koin for Kotlin apps
     implementation "io.insert-koin:koin-android:$koin_version"
     // Testing
-    testImplementation "io.insert-koin:koin-test:$koin_version"
+    androidTestImplementation "io.insert-koin:koin-test:$koin_version"
     testImplementation "io.mockk:mockk:$mockk_version"
     testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutines_version"
-    testImplementation "androidx.arch.core:core-testing:2.1.0"
-    //testImplementation "org.mockito.kotlin:mockito-kotlin:3.2.0"
-
+    androidTestImplementation "androidx.arch.core:core-testing:2.1.0"
     testImplementation 'junit:junit:4.+'
+    androidTestImplementation("com.squareup.okhttp3:mockwebserver:3.14.9")
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    androidTestImplementation 'com.jakewharton.espresso:okhttp3-idling-resource:1.0.0'
+    androidTestImplementation "androidx.test:core-ktx:1.4.0"
+    androidTestImplementation 'androidx.test.ext:junit-ktx:1.1.3'
+
+
 }

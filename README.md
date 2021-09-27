@@ -9,4 +9,4 @@ Foi utilizado conceitos de Clean Architecture com MVVM, injeção de dependênci
 
 Testes unitário usando Mockk e JUnit4
 
-Testes de UI com Espresso usando Robot Pattern
+Testes de UI com MockWebServer e Espresso usando Robot Pattern
